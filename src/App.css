@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main-header {
+  height: 150px;
+  background-color: royalblue;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.header-logo {
+  height: 125px;
 }
 
-@keyframes App-logo-spin {
+.header-links {
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  font-size: 20px;
+}
+
+.dropdown-toggle {
+  display: none;
+}
+
+.mobile-links {
+  display: none;
+}
+
+.react-logo {
+  height: 350px;
+  width: 350px;
+  animation-name: spin;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: 5s;
+}
+
+.react-logo:hover {
+  height: 700px;
+  width: 700px;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
+  }
+}
+
+@media(max-width: 800px){
+  .main-header {
+    height: 200px;
+  }
+
+  .header-logo {
+    height: 175px;
+  }
+
+  .header-links {
+    width: 40%;
+  }
+}
+
+@media(max-width: 450px){
+  .header-links {
+    display: none;
+  }
+
+  .dropdown-toggle {
+    display: initial;
+  }
+
+  .mobile-links {
+    display: initial;
+    height: 150px;
+    width: 150px;
+    background-color: royalblue;
+    position: fixed;
+    top: 200px;
+    right: 0px;
   }
 }
